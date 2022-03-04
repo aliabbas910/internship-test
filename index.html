@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Test</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: lightgray;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgb(168, 97, 248);
+            position: absolute;
+        }
+        .box:nth-child(1) {
+            background: rgb(107, 250, 107);
+            top: 10px; left: 10px;
+        }
+        .box:nth-child(2) {
+            background: pink;
+            top: 20px; left: 20px;
+        }
+        .box:nth-child(3) {
+            background: rgb(255, 255, 85);
+            top: 30px; left: 30px;
+        }
+        .box:nth-child(4) {
+            background: royalblue;
+            top: 40px; left: 40px;
+        }
+        .box:nth-child(5) {
+            background: rgb(253, 66, 66);
+            top: 50px; left: 50px;
+        }
+        .box:nth-child(6) {
+            background: rgb(253, 150, 66);
+            top: 60px; left: 60px;
+        }
+        .box:nth-child(7) {
+            background: rgb(66, 253, 122);
+            top: 70px; left: 70px;
+        }
+        .box:nth-child(8) {
+            background: rgb(85, 66, 253);
+            top: 80px; left: 80px;
+        }
+        .box:nth-child(9) {
+            background: rgb(247, 66, 253);
+            top: 90px; left: 90px;
+        }
+        .box:nth-child(10) {
+            background: rgb(66, 253, 237);
+            top: 100px; left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+        <div class="box" onclick="changeColor(event.target);"></div>
+    </div>
+</body>
+<script>
+    function changeColor(evt) {
+        let boxClicked = event.target;
+        console.log(boxClicked);
+        
+        let bgColor = getComputedStyle(evt).backgroundColor
+
+        let prevBox = boxClicked.previousElementSibling;
+        let nextBox = boxClicked.nextElementSibling;
+
+        if(prevBox) {
+            prevBox.style.backgroundColor = bgColor;
+        }
+        if(nextBox) {
+        nextBox.style.backgroundColor = bgColor;
+        }
+        
+    }
+</script>
+</html>
